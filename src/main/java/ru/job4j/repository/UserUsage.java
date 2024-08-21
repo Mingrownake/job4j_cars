@@ -16,22 +16,22 @@ public class UserUsage {
             var user = new User();
             user.setLogin("admin");
             user.setPassword("admin");
-            userRepository.create(user);
-//            userRepository.findAllOrderById()
-//                    .forEach(System.out::println);
-//            userRepository.findByLikeLogin("e")
-//                    .forEach(System.out::println);
-//            userRepository.findById(user.getId())
-//                    .ifPresent(System.out::println);
-//            userRepository.findByLogin("admin")
-//                    .ifPresent(System.out::println);
-//            user.setPassword("password");
-//            userRepository.update(user);
-//            userRepository.findById(user.getId())
-//                    .ifPresent(System.out::println);
-//            userRepository.delete(user.getId());
-//            userRepository.findAllOrderById()
-//                    .forEach(System.out::println);
+            user = userRepository.create(user);
+            userRepository.findAllOrderById()
+                    .forEach(System.out::println);
+            userRepository.findByLikeLogin("e")
+                    .forEach(System.out::println);
+            userRepository.findById(user.getId())
+                    .ifPresent(System.out::println);
+            userRepository.findByLogin("admin")
+                    .ifPresent(System.out::println);
+            user.setPassword("password");
+            userRepository.update(user);
+            userRepository.findById(user.getId())
+                    .ifPresent(System.out::println);
+              userRepository.delete(user.getId());
+              userRepository.findAllOrderById()
+                    .forEach(System.out::println);
         } finally {
             StandardServiceRegistryBuilder.destroy(registry);
         }
